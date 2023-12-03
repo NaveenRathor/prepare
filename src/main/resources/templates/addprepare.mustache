@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+<!--    <title>{{#add}}Create new User{{/add}}{{^add}}Edit User{{/add}}</title>-->
+<!--    <link rel="stylesheet" type="text/css" href="/css/style.css"/>-->
+    <style>
+        .w3-input{padding:10px;display:block;border:none;border-bottom:1px solid #33adff;width:300%}
+        .w3-border{border:1px solid #33adff !important}
+        .w3-round-large{border-radius:8px}
+        .w3-header{padding:10px;display:block;border:none;}
+    </style>
+</head>
+<body>
+<!--<h1>{{#add}}Add New Question:{{/add}}{{^add}}Edit User:{{/add}}</h1>-->
+<h1>{{#add}}Add New Question{{/add}}</h1>
+<a href="/vi/data">Question List</a>
+<br/><br/>
+{{#prepare}}
+<!--    <form action="{{#add}}/users/add{{/add}}{{^add}}/users/{{id}}/edit{{/add}}" name="user" method="POST">-->
+    <form action="{{#add}}/vi/add{{/add}}" name="prepare" method="POST">
+        <table border="0">
+            <!--{{#id}}
+                <tr>
+                    <td>ID</td>
+                    <td>:</td>
+                    <td>{{id}}</td>
+                </tr>
+            {{/id}}-->
+            <tr>
+                <td class="w3-header">Question :</td>
+            </tr>
+            <tr>
+                <td><input class="w3-input w3-border w3-round-large" type="text" name="question" value="{{#question}}{{question}}{{/question}}" /></td>
+            </tr>
+            <tr>
+                <td class="w3-header">Answer :</td>
+            </tr>
+            <tr>
+                <td><input class="w3-input w3-border w3-round-large" type="text" name="answer" value="{{#answer}}{{answer}}{{/answer}}" /></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="{{#add}}Create{{/add}}" />
+<!--        <input type="submit" value="{{#add}}Create{{/add}}{{^add}}Update{{/add}}" />-->
+    </form>
+{{/prepare}}
+
+<br/>
+<!-- Check if errorMessage is not null and not empty -->
+<!--<div class="error">{{#errorMessage}}{{errorMessage}}{{/errorMessage}}</div>-->
+</body>
+</html>
