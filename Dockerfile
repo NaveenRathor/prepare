@@ -8,7 +8,8 @@ EXPOSE 8080
 
 # Optionally, install MySQL client if needed for debugging or other purposes
 RUN apt-get update && \
-    apt-get install -y mysql-client
+        apt-get install -y --no-install-recommends mysql-client && \
+        rm -rf /var/lib/apt/lists/*
 
 # Set environment variables for MySQL connection
 ENV MYSQL_HOST=mysql-server
