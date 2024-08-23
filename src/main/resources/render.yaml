@@ -1,0 +1,11 @@
+# Exported from Render on 2024-08-23T09:44:12Z
+services:
+- type: web
+  name: prepare
+  runtime: docker
+  repo: https://github.com/NaveenRathor/prepare
+  plan: free
+  region: oregon
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
+version: "1"
